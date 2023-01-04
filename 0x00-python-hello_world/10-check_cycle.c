@@ -18,10 +18,11 @@ int check_cycle(listint_t *list)
 	while (doub && doub->next)
 	{
 		reg = reg->next;
-	}	
+		doub = doub->next->next;
+	
 
-	if (reg == doub)
-		return (1);
-}
-return (0);
+		if (reg == doub)
+			return (1);
+	}
+	return (0);
 }
