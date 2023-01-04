@@ -10,17 +10,17 @@
 
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *current = &head;
-	listint_t *next = current->next;
-	while (current->next != '\0')
-	{
-		if (next->n > number)
+		listint_t *current = &head;
+		listint_t *next = current->next;
+		while (current->next != '\0')
 		{
-			current->n = number;
-			current->next = current->next;
-			return (current);
+			if (next->n > number)
+			{
+				current->n = number;
+				current->next = current->next;
+				return (current);
+			}	
+			current = current->next;
 		}
-		current = current->next;
-	}
-	return (NULL);
+		return (NULL);
 }
